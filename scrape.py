@@ -24,4 +24,25 @@ time.sleep(3)
 driver.find_element_by_id('NYC').click()
 time.sleep (1)
 # Checks for available appointments in NYC
-driver.find_element_by_xpath('//*[@id="NYC-notes"]/form/div/div[2]/div[1]').click()
+nyc_appt = driver.find_element_by_xpath('//*[@id="NYC-notes"]/form/div/div[2]/div[1]')
+
+nyc_appt.click()
+
+
+#screenshot = driver.save_screenshot('my_screenshot.png')
+
+
+# Support for sending email confirmation
+'''
+import smtplib
+server = smtplib.SMTP('smtp.gmail.com', 587)
+server.ehlo()
+server.starttls()
+server.login("Snap41@gmail.com", "kartikurmish")
+msg = "Hello, this is a script run confirmation!"
+server.sendmail("Snap41@gmail.com", "kartiknath@gmail.com", msg)
+server.quit()
+'''
+time.sleep(3)
+# Close connection
+driver.quit()
